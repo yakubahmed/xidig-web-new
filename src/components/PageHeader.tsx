@@ -20,7 +20,7 @@ export function PageHeader({
     background: 'radial-gradient(circle at 20% 20%, rgba(76, 131, 255, 0.12), transparent 30%), radial-gradient(circle at 80% 30%, rgba(16, 185, 129, 0.12), transparent 28%)'
   };
 
-  return <section className="relative pt-28 pb-14 bg-slate-950 overflow-hidden">
+  return <section className="relative pt-28 pb-14 bg-slate-950 overflow-hidden animate-card">
       <div className="absolute inset-0 opacity-70" style={gradientOverlay} />
       <div className="max-w-7xl mx-auto px-4 relative">
         <div className="flex items-center gap-3 text-sm font-inter text-gray-400 mb-4">

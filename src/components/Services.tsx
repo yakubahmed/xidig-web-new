@@ -39,7 +39,7 @@ const services = [{
   featured: false
 }];
 export function Services() {
-  return <section className="py-32 px-4 bg-slate-950 relative">
+  return <section className="py-32 px-4 bg-slate-950 relative animate-card">
       {/* Subtle background accent */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-brand-primary-500/20 to-transparent"></div>
 
@@ -66,7 +66,9 @@ export function Services() {
           const gradientFrom = service.color === 'primary' ? 'from-brand-primary-500/10' : 'from-brand-secondary-500/10';
           const gradientTo = service.color === 'primary' ? 'to-brand-primary-600/10' : 'to-brand-secondary-600/10';
           const hoverGradient = service.color === 'primary' ? 'from-brand-primary-500/0 to-brand-primary-500/0 group-hover:from-brand-primary-500/5 group-hover:to-transparent' : 'from-brand-secondary-500/0 to-brand-secondary-500/0 group-hover:from-brand-secondary-500/5 group-hover:to-transparent';
-          return <div key={index} className={`group relative bg-white/[0.02] backdrop-blur-sm rounded-2xl p-8 border border-white/5 hover:border-white/10 transition-all duration-500 ${service.featured ? 'md:col-span-1 lg:row-span-1' : ''}`}>
+          return <div key={index} className={`group relative bg-white/[0.02] backdrop-blur-sm rounded-2xl p-8 border border-white/5 hover:border-white/10 transition-all duration-500 ${service.featured ? 'md:col-span-1 lg:row-span-1' : ''} animate-card`} style={{
+            animationDelay: `${index * 0.05 + 0.05}s`
+          }}>
                 {/* Hover glow effect */}
                 <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${hoverGradient} transition-all duration-500`}></div>
 

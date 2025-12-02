@@ -32,7 +32,7 @@ const reasons = [{
   color: 'primary'
 }];
 export function WhyChoose() {
-  return <section className="py-32 px-4 bg-slate-900 relative">
+  return <section className="py-32 px-4 bg-slate-900 relative animate-card">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-block px-4 py-1.5 rounded-full bg-brand-primary-500/10 border border-brand-primary-500/20 text-brand-primary-400 text-sm font-medium mb-6">
@@ -55,7 +55,9 @@ export function WhyChoose() {
           const gradientFrom = reason.color === 'primary' ? 'from-brand-primary-500/10' : 'from-brand-secondary-500/10';
           const gradientTo = reason.color === 'primary' ? 'to-brand-primary-600/10' : 'to-brand-secondary-600/10';
           const hoverGradient = reason.color === 'primary' ? 'from-brand-primary-500/0 to-brand-primary-500/0 group-hover:from-brand-primary-500/5 group-hover:to-transparent' : 'from-brand-secondary-500/0 to-brand-secondary-500/0 group-hover:from-brand-secondary-500/5 group-hover:to-transparent';
-          return <div key={index} className="group relative bg-white/[0.02] backdrop-blur-sm rounded-2xl p-8 border border-white/5 hover:border-white/10 transition-all duration-500">
+          return <div key={index} className="group relative bg-white/[0.02] backdrop-blur-sm rounded-2xl p-8 border border-white/5 hover:border-white/10 transition-all duration-500 animate-card" style={{
+            animationDelay: `${index * 0.05 + 0.05}s`
+          }}>
                 <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${hoverGradient} transition-all duration-500`}></div>
 
                 <div className="relative">

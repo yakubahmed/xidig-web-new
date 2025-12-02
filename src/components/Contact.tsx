@@ -28,7 +28,7 @@ export function Contact() {
       [e.target.name]: e.target.value
     });
   };
-  return <section className="py-32 px-4 bg-slate-950 relative">
+  return <section className="py-32 px-4 bg-slate-950 relative animate-card">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-brand-secondary-500/20 to-transparent"></div>
 
       <div className="max-w-6xl mx-auto">
@@ -46,7 +46,7 @@ export function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           <div className="lg:col-span-3">
-            <div className="bg-white/[0.02] backdrop-blur-sm rounded-2xl p-8 border border-white/5">
+            <div className="bg-white/[0.02] backdrop-blur-sm rounded-2xl p-8 border border-white/5 animate-card">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
@@ -117,7 +117,9 @@ export function Contact() {
           </div>
 
           <div className="lg:col-span-2 space-y-6">
-            <div className="bg-white/[0.02] backdrop-blur-sm rounded-2xl p-8 border border-white/5">
+            <div className="bg-white/[0.02] backdrop-blur-sm rounded-2xl p-8 border border-white/5 animate-card" style={{
+            animationDelay: '0.05s'
+          }}>
               <h3 className="font-poppins font-semibold text-xl text-white mb-4">
                 Quick response
               </h3>
@@ -147,7 +149,9 @@ export function Contact() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-brand-primary-500/10 to-brand-secondary-500/10 backdrop-blur-sm rounded-2xl p-8 border border-brand-primary-500/20">
+            <div className="bg-gradient-to-br from-brand-primary-500/10 to-brand-secondary-500/10 backdrop-blur-sm rounded-2xl p-8 border border-brand-primary-500/20 animate-card" style={{
+            animationDelay: '0.1s'
+          }}>
               <div className="text-4xl mb-4">🚀</div>
               <h3 className="font-poppins font-semibold text-xl text-white mb-3">
                 Ready to start?

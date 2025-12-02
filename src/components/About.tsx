@@ -18,7 +18,7 @@ const stats = [{
   color: 'primary'
 }];
 export function About() {
-  return <section className="py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-950">
+  return <section className="py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-950 animate-card">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-poppins font-bold text-4xl md:text-5xl text-white mb-6">
@@ -37,7 +37,7 @@ export function About() {
           const iconColor = stat.color === 'primary' ? 'text-brand-primary-400' : 'text-brand-secondary-400';
           const gradientFrom = stat.color === 'primary' ? 'from-brand-primary-500/20' : 'from-brand-secondary-500/20';
           const gradientTo = stat.color === 'primary' ? 'to-brand-primary-600/20' : 'to-brand-secondary-600/20';
-          return <Card key={index} className="text-center" hover={false}>
+          return <Card key={index} className="text-center animate-card" hover={false}>
                 <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${gradientFrom} ${gradientTo} flex items-center justify-center mx-auto mb-4`}>
                   <Icon className={iconColor} size={32} />
                 </div>
@@ -49,7 +49,7 @@ export function About() {
         })}
         </div>
 
-        <Card className="text-center" hover={false}>
+        <Card className="text-center animate-card" hover={false}>
           <p className="font-inter text-lg text-gray-300 leading-relaxed">
             Serving{' '}
             <span className="text-brand-primary-400 font-semibold">

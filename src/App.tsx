@@ -106,8 +106,10 @@ export function App() {
 
   return <div className="min-h-screen bg-slate-950">
       <Navbar currentRoute={route} onNavigate={navigate} />
-      {pageHeader}
-      {pageContent}
+      <div key={route} className="animate-page">
+        {pageHeader}
+        {pageContent}
+      </div>
       <Footer onNavigate={navigate} />
     </div>;
 }
