@@ -33,7 +33,7 @@ export function ComingSoon({
             </span>
           </h1>
           <p className="font-inter text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            We’re crafting the next chapter of Xidig. Be the first to know when we launch—get early access,
+            We're crafting the next chapter of Xidig. Be the first to know when we launch -- get early access,
             previews, and beta invites.
           </p>
         </div>
@@ -54,7 +54,7 @@ export function ComingSoon({
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
-          {['Curated betas', 'Launch discounts', 'Early roadmap'].map((item, idx) => <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
+          {['Curated betas', 'Launch discounts', 'Early roadmap'].map(item => <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
               <div className="text-sm font-semibold text-white mb-1">{item}</div>
               <p className="text-sm text-gray-400">Exclusive for early subscribers.</p>
             </div>)}
@@ -67,9 +67,10 @@ export function ComingSoon({
               <p className="text-lg font-semibold text-white">Q2 2025</p>
             </div>
             <button className="text-sm font-medium text-brand-primary-300 hover:text-brand-primary-200 transition-colors" onClick={() => onNavigate('/products')}>
-              Explore current products →
+              Explore current products &rarr;
             </button>
           </div>
         </div>
       </div>
     </section>;
+}
