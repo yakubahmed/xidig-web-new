@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from './Card';
-import { CodeIcon, SmartphoneIcon, CloudIcon, LinkIcon, PaletteIcon, HeadphonesIcon } from 'lucide-react';
+import { CodeIcon, SmartphoneIcon, LinkIcon, PaletteIcon, HeadphonesIcon, MegaphoneIcon } from 'lucide-react';
 const services = [{
   icon: CodeIcon,
   title: 'Custom Software',
@@ -13,12 +13,6 @@ const services = [{
   description: 'Native iOS and Android apps with Flutter for fast, beautiful cross-platform experiences.',
   color: 'secondary',
   featured: true
-}, {
-  icon: CloudIcon,
-  title: 'Cloud & DevOps',
-  description: 'CI/CD pipelines, infrastructure management, and secure cloud deployments.',
-  color: 'primary',
-  featured: false
 }, {
   icon: LinkIcon,
   title: 'API Integration',
@@ -36,6 +30,12 @@ const services = [{
   title: 'IT Support',
   description: '24/7 monitoring, configuration, troubleshooting, and technical support.',
   color: 'secondary',
+  featured: false
+}, {
+  icon: MegaphoneIcon,
+  title: 'Digital Marketing',
+  description: 'Performance campaigns, SEO, and analytics to grow your product reach.',
+  color: 'primary',
   featured: false
 }];
 export function Services() {
