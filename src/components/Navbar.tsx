@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from './Button';
 import { MenuIcon, XIcon } from 'lucide-react';
+import type { ProductRoute } from './Products';
+import type { BlogPostRoute } from './Blog';
 
-type Route = '/' | '/services' | '/products' | '/about' | '/contact';
+type PrimaryRoute = '/' | '/services' | '/products' | '/about' | '/contact' | '/blog';
+type Route = PrimaryRoute | ProductRoute | BlogPostRoute;
 
 type NavbarProps = {
   currentRoute: Route;
-  onNavigate: (path: Route) => void;
+  onNavigate: (path: PrimaryRoute) => void;
 };
 
-const navLinks: { name: string; href: Route }[] = [{
+const navLinks: { name: string; href: PrimaryRoute }[] = [{
   name: 'Home',
   href: '/'
 }, {
@@ -18,6 +21,9 @@ const navLinks: { name: string; href: Route }[] = [{
 }, {
   name: 'Products',
   href: '/products'
+}, {
+  name: 'Blog',
+  href: '/blog'
 }, {
   name: 'About',
   href: '/about'

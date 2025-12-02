@@ -3,16 +3,22 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Hero } from './components/Hero';
 import { Services } from './components/Services';
-import { Products } from './components/Products';
+import { Products, products, ProductRoute } from './components/Products';
+import { Blog, blogPosts, BlogPostRoute } from './components/Blog';
+import { BlogPostDetail } from './components/BlogPostDetail';
 import { WhyChoose } from './components/WhyChoose';
 import { Projects } from './components/Projects';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { PageHeader } from './components/PageHeader';
+import { ProductDetails } from './components/ProductDetails';
+import { Clients } from './components/Clients';
 
-type Route = '/' | '/services' | '/products' | '/about' | '/contact';
+type PrimaryRoute = '/' | '/services' | '/products' | '/about' | '/contact' | '/blog';
+type Route = PrimaryRoute | ProductRoute | BlogPostRoute;
 
-const isKnownRoute = (path: string): path is Route => ['/', '/services', '/products', '/about', '/contact'].includes(path);
+const knownRoutes: Route[] = ['/', '/services', '/products', '/about', '/contact', '/blog', '/products/xidig-pos', '/products/xidig-hms', '/products/university-attendance', '/products/inventory-manager', '/products/loan-management', '/products/greenhouse-calculator', ...blogPosts.map(p => p.route)];
+const isKnownRoute = (path: string): path is Route => knownRoutes.includes(path as Route);
 
 export function App() {
   const [route, setRoute] = useState<Route>(() => isKnownRoute(window.location.pathname) ? window.location.pathname : '/');
@@ -40,6 +46,20 @@ export function App() {
   };
 
   const pageContent = useMemo(() => {
+    const productMatch = products.find(p => p.route === route);
+    if (productMatch) {
+      return <>
+          <ProductDetails product={productMatch} onNavigate={navigate} />
+          <Contact />
+        </>;
+    }
+    const blogMatch = blogPosts.find(p => p.route === route);
+    if (blogMatch) {
+      return <>
+          <BlogPostDetail post={blogMatch} onNavigate={navigate} />
+          <Contact />
+        </>;
+    }
     switch (route) {
       case '/services':
         return <>
@@ -49,8 +69,13 @@ export function App() {
           </>;
       case '/products':
         return <>
-            <Products />
+            <Products onNavigate={navigate} />
             <WhyChoose />
+            <Contact />
+          </>;
+      case '/blog':
+        return <>
+            <Blog onNavigate={navigate} />
             <Contact />
           </>;
       case '/about':
@@ -67,10 +92,12 @@ export function App() {
       default:
         return <>
             <Hero />
+            <Clients />
             <Services />
-            <Products />
+            <Products onNavigate={navigate} />
             <WhyChoose />
             <Projects />
+            <Blog onNavigate={navigate} />
             <About />
             <Contact />
           </>;
@@ -78,6 +105,14 @@ export function App() {
   }, [route]);
 
   const pageHeader = route === '/' ? null : (() => {
+    const productMatch = products.find(p => p.route === route);
+    if (productMatch) {
+      return <PageHeader title={productMatch.title} description={productMatch.description} breadcrumbs={['Home', 'Products', productMatch.title]} onNavigate={navigate} />;
+    }
+    const blogMatch = blogPosts.find(p => p.route === route);
+    if (blogMatch) {
+      return <PageHeader title={blogMatch.title} description={blogMatch.excerpt} breadcrumbs={['Home', 'Blog', blogMatch.title]} onNavigate={navigate} />;
+    }
     const meta = {
       '/services': {
         title: 'Services',
@@ -89,6 +124,11 @@ export function App() {
         description: 'Ready-to-deploy solutions tailored for your industry.',
         breadcrumbs: ['Home', 'Products'] as const
       },
+      '/blog': {
+        title: 'Blog',
+        description: 'Insights from the Xidig team across industries.',
+        breadcrumbs: ['Home', 'Blog'] as const
+      },
       '/about': {
         title: 'About',
         description: 'Our story, values, and the team building Xidig.',
@@ -99,8 +139,8 @@ export function App() {
         description: 'Start a conversation with our team.',
         breadcrumbs: ['Home', 'Contact'] as const
       }
-    } satisfies Record<Route, { title: string; description: string; breadcrumbs: readonly string[] }>;
-    const current = meta[route];
+    } satisfies Record<PrimaryRoute, { title: string; description: string; breadcrumbs: readonly string[] }>;
+    const current = meta[route as PrimaryRoute];
     return <PageHeader title={current.title} description={current.description} breadcrumbs={current.breadcrumbs} onNavigate={navigate} />;
   })();
 
