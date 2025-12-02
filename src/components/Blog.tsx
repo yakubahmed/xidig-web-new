@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRightIcon } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export type BlogPostRoute = `/blog/${string}`;
 
@@ -46,7 +47,8 @@ type BlogProps = {
 export function Blog({
   onNavigate
 }: BlogProps) {
-  return <section className="py-24 px-4 bg-slate-950 relative animate-card">
+  const revealRef = useScrollReveal<HTMLElement>();
+  return <section ref={revealRef} className="py-24 px-4 bg-slate-950 relative">
       <div className="pointer-events-none absolute inset-0 opacity-50">
         <div className="absolute left-6 top-10 h-40 w-40 rounded-full bg-brand-primary-500/10 blur-3xl" />
         <div className="absolute right-12 bottom-6 h-48 w-48 rounded-full bg-brand-secondary-500/10 blur-3xl" />

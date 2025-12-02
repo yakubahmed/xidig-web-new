@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRightIcon, ShieldCheckIcon, SparklesIcon } from 'lucide-react';
 import { Product, ProductRoute } from './Products';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 type ProductDetailsProps = {
   product: Product;
@@ -11,7 +12,8 @@ export function ProductDetails({
   product,
   onNavigate
 }: ProductDetailsProps) {
-  return <section className="py-24 px-4 bg-slate-950 animate-card">
+  const revealRef = useScrollReveal<HTMLElement>();
+  return <section ref={revealRef} className="py-24 px-4 bg-slate-950">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-10">
         <div className="lg:col-span-3 space-y-6">
           <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">

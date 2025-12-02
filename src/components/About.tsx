@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from './Card';
 import { AwardIcon, TrendingUpIcon, UsersIcon } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 const stats = [{
   icon: AwardIcon,
   value: '5+',
@@ -18,7 +19,8 @@ const stats = [{
   color: 'primary'
 }];
 export function About() {
-  return <section className="py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-950 animate-card">
+  const revealRef = useScrollReveal<HTMLElement>();
+  return <section ref={revealRef} className="py-20 px-4 bg-gradient-to-b from-slate-900 to-slate-950">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-poppins font-bold text-4xl md:text-5xl text-white mb-6">

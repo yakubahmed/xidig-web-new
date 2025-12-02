@@ -1,5 +1,6 @@
 import React from 'react';
 import { GlobeIcon, ZapIcon, ShieldIcon, DollarSignIcon, MessageSquareIcon } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 const reasons = [{
   icon: GlobeIcon,
   title: 'Fully Remote',
@@ -32,7 +33,8 @@ const reasons = [{
   color: 'primary'
 }];
 export function WhyChoose() {
-  return <section className="py-32 px-4 bg-slate-900 relative animate-card">
+  const revealRef = useScrollReveal<HTMLElement>();
+  return <section ref={revealRef} className="py-32 px-4 bg-slate-900 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-20">
           <div className="inline-block px-4 py-1.5 rounded-full bg-brand-primary-500/10 border border-brand-primary-500/20 text-brand-primary-400 text-sm font-medium mb-6">

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRightIcon, BoxesIcon, CreditCardIcon, GraduationCapIcon, SproutIcon, StethoscopeIcon, WalletIcon } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export type ProductRoute = '/products/xidig-pos' | '/products/xidig-hms' | '/products/university-attendance' | '/products/inventory-manager' | '/products/loan-management' | '/products/greenhouse-calculator';
 
@@ -84,13 +85,14 @@ type ProductsProps = {
 export function Products({
   onNavigate
 }: ProductsProps) {
+  const revealRef = useScrollReveal<HTMLElement>();
   const handleNavigate = (path: ProductRoute) => {
     if (onNavigate) {
       onNavigate(path);
     }
   };
 
-  return <section className="py-32 px-4 bg-gradient-to-b from-slate-950 to-slate-900 relative animate-card">
+  return <section ref={revealRef} className="py-32 px-4 bg-gradient-to-b from-slate-950 to-slate-900 relative">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-20">
           <div className="inline-block px-4 py-1.5 rounded-full bg-brand-secondary-500/10 border border-brand-secondary-500/20 text-brand-secondary-400 text-sm font-medium mb-6">

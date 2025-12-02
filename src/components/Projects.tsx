@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRightIcon } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 const projects = [{
   title: 'Banking Dashboard',
   description: 'Real-time transaction monitoring and analytics platform for financial institutions.',
@@ -36,9 +37,16 @@ const projects = [{
   category: 'Education',
   tags: ['Vue.js', 'Laravel', 'Redis'],
   color: 'secondary'
+}, {
+  title: 'Logistics Command Center',
+  description: 'Single-pane operations dashboard for fleet tracking, exception handling, and SLA alerts.',
+  category: 'Logistics',
+  tags: ['React', 'TypeScript', 'Mapbox'],
+  color: 'primary'
 }];
 export function Projects() {
-  return <section className="py-32 px-4 bg-gradient-to-b from-slate-900 to-slate-950 relative animate-card">
+  const revealRef = useScrollReveal<HTMLElement>();
+  return <section ref={revealRef} className="py-32 px-4 bg-gradient-to-b from-slate-900 to-slate-950 relative">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-20">
           <div className="inline-block px-4 py-1.5 rounded-full bg-brand-secondary-500/10 border border-brand-secondary-500/20 text-brand-secondary-400 text-sm font-medium mb-6">

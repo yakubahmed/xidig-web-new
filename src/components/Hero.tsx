@@ -1,8 +1,10 @@
 import React from 'react';
 import { Button } from './Button';
 import { RocketIcon, CalendarIcon } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 export function Hero() {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pt-20">
+  const revealRef = useScrollReveal<HTMLElement>();
+  return <section ref={revealRef} className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pt-20">
       {/* Modern gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950"></div>
 

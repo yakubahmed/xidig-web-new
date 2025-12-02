@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from './Button';
 import { SendIcon, CheckCircleIcon } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 export function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -28,7 +29,8 @@ export function Contact() {
       [e.target.name]: e.target.value
     });
   };
-  return <section className="py-32 px-4 bg-slate-950 relative animate-card">
+  const revealRef = useScrollReveal<HTMLElement>();
+  return <section ref={revealRef} className="py-32 px-4 bg-slate-950 relative">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-brand-secondary-500/20 to-transparent"></div>
 
       <div className="max-w-6xl mx-auto">

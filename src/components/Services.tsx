@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from './Card';
 import { CodeIcon, SmartphoneIcon, LinkIcon, PaletteIcon, HeadphonesIcon, MegaphoneIcon } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 const services = [{
   icon: CodeIcon,
   title: 'Custom Software',
@@ -39,7 +40,8 @@ const services = [{
   featured: false
 }];
 export function Services() {
-  return <section className="py-32 px-4 bg-slate-950 relative animate-card">
+  const revealRef = useScrollReveal<HTMLElement>();
+  return <section ref={revealRef} className="py-32 px-4 bg-slate-950 relative">
       {/* Subtle background accent */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-px bg-gradient-to-r from-transparent via-brand-primary-500/20 to-transparent"></div>
 
