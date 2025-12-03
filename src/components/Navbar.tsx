@@ -83,7 +83,10 @@ export function Navbar({
                         <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-brand-primary-500 to-brand-secondary-500 transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
                       </button>
 
-                      <div className={`absolute left-1/2 -translate-x-1/2 mt-4 w-[420px] max-w-[88vw] bg-slate-950/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_20px_50px_-25px_rgba(0,0,0,0.8)] overflow-hidden transition-all duration-200 ${isProductsOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
+                      <div
+                        onMouseEnter={() => setIsProductsOpen(true)}
+                        onMouseLeave={() => setIsProductsOpen(false)}
+                        className={`absolute left-1/2 -translate-x-1/2 top-full pt-2 w-[420px] max-w-[88vw] bg-slate-950/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_20px_50px_-25px_rgba(0,0,0,0.8)] overflow-hidden transition-all duration-200 ${isProductsOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
                         <div className="relative border-b border-white/5 px-5 py-4 flex items-center justify-between">
                           <div className="space-y-1">
                             <p className="text-[11px] uppercase tracking-[0.2em] text-gray-400">Products</p>
