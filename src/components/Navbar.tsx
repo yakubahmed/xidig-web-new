@@ -83,50 +83,37 @@ export function Navbar({
                         <span className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-brand-primary-500 to-brand-secondary-500 transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
                       </button>
 
-                      <div className={`absolute left-1/2 -translate-x-1/2 mt-4 w-[720px] max-w-[88vw] bg-slate-950/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-[0_20px_60px_-20px_rgba(0,0,0,0.8)] overflow-hidden transition-all duration-200 ${isProductsOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
-                        <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-brand-primary-500/15 via-transparent to-brand-secondary-500/15 pointer-events-none" />
-                        <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-60" />
-
-                        <div className="relative px-5 pt-4 pb-3 border-b border-white/5 flex items-center justify-between">
-                          <div>
+                      <div className={`absolute left-1/2 -translate-x-1/2 mt-4 w-[420px] max-w-[88vw] bg-slate-950/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-[0_20px_50px_-25px_rgba(0,0,0,0.8)] overflow-hidden transition-all duration-200 ${isProductsOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
+                        <div className="relative border-b border-white/5 px-5 py-4 flex items-center justify-between">
+                          <div className="space-y-1">
                             <p className="text-[11px] uppercase tracking-[0.2em] text-gray-400">Products</p>
-                            <p className="text-sm text-gray-200">Pick a solution to explore its details.</p>
+                            <p className="text-xs text-gray-300">Jump to a product page.</p>
                           </div>
-                          <button onClick={() => handleNavigate('/products')} className="text-xs font-semibold text-brand-primary-300 hover:text-brand-primary-200 transition-colors px-3 py-2 rounded-lg hover:bg-white/5 border border-transparent hover:border-white/10">
-                            View all →
+                          <button onClick={() => handleNavigate('/products')} className="text-xs font-semibold text-brand-primary-300 hover:text-white transition-colors px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">
+                            View all
                           </button>
                         </div>
 
-                        <div className="relative grid grid-cols-1 sm:grid-cols-2 gap-3 p-4">
-                          {products.map((product, idx) => {
-                          const isProductActive = currentRoute === product.route;
+                        <div className="relative flex flex-col divide-y divide-white/5">
+                          {products.map(product => {
                           const Icon = product.icon;
-                          const badgeColor = product.color === 'primary' ? 'text-brand-primary-300 bg-brand-primary-500/10' : 'text-brand-secondary-300 bg-brand-secondary-500/10';
+                          const isProductActive = currentRoute === product.route;
                           return <a key={product.route} href={product.route} onClick={e => {
                             e.preventDefault();
                             handleNavigate(product.route);
-                          }} className={`group flex gap-3 p-3 rounded-xl border border-white/5 hover:border-white/15 bg-white/[0.02] hover:bg-white/[0.05] transition ${isProductActive ? 'ring-1 ring-brand-primary-400/40' : ''}`}>
-                                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-br from-white/10 to-white/0 border border-white/10 text-white shadow-inner shadow-black/20">
-                                  <Icon size={18} strokeWidth={1.6} className="transition-transform duration-300 group-hover:scale-105" />
+                          }} className={`flex items-center gap-3 px-5 py-3 hover:bg-white/5 transition ${isProductActive ? 'bg-white/5' : ''}`}>
+                                <div className="h-10 w-10 rounded-lg bg-white/10 border border-white/10 flex items-center justify-center text-white">
+                                  <Icon size={18} strokeWidth={1.6} />
                                 </div>
-                                <div className="flex-1 space-y-1">
-                                  <div className="flex items-center justify-between gap-2">
-                                    <span className="text-sm font-semibold text-white flex items-center gap-2">
-                                      {product.title}
-                                      {idx < 2 ? <span className="text-[10px] uppercase tracking-wide px-2 py-0.5 rounded-full bg-white/10 text-white/80 border border-white/15">Featured</span> : null}
-                                    </span>
-                                    <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full ${badgeColor}`}>
-                                      {product.category}
-                                    </span>
-                                  </div>
-                                  <span className="text-xs text-gray-400 leading-relaxed overflow-hidden text-ellipsis max-h-12 block">
-                                    {product.description}
-                                  </span>
+                                <div className="flex-1">
+                                  <div className="text-sm font-semibold text-white">{product.title}</div>
+                                  <div className="text-xs text-gray-400">{product.category}</div>
                                 </div>
                               </a>;
                         })}
                         </div>
                       </div>
+
                     </div>;
               }
               return <a key={link.name} href={link.href} onClick={e => {

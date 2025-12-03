@@ -98,7 +98,6 @@ export function App() {
             <WhyChoose />
             <Projects />
             <Blog onNavigate={navigate} />
-            <About />
             <Contact />
           </>;
     }

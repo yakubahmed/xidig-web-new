@@ -43,7 +43,17 @@ export function Clients() {
         <div className="absolute right-20 bottom-4 h-52 w-52 rounded-full bg-brand-secondary-500/10 blur-3xl" />
       </div>
 
-      <div className="max-w-7xl mx-auto relative animate-card">
+      <div className="max-w-7xl mx-auto relative animate-card space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div>
+            <p className="text-xs uppercase tracking-[0.25em] text-brand-primary-200">Partners</p>
+            <h3 className="font-poppins text-3xl font-semibold text-white">Trusted by teams we serve</h3>
+          </div>
+          <p className="text-sm text-gray-400 max-w-xl">
+            A sample of organizations that rely on Xidig for software, infrastructure, and support.
+          </p>
+        </div>
+
         <div className="relative overflow-hidden py-2">
           <div className="pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-28 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-28 bg-gradient-to-l from-slate-950 via-slate-950/80 to-transparent" />
