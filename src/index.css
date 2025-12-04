@@ -169,4 +169,13 @@
     transform: translateY(0) scale(1);
     filter: blur(0);
   }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from './Card';
-import { CodeIcon, SmartphoneIcon, LinkIcon, PaletteIcon, HeadphonesIcon, MegaphoneIcon } from 'lucide-react';
+import { CodeIcon, SmartphoneIcon, PaletteIcon, HeadphonesIcon, MegaphoneIcon, GlobeIcon } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 const services = [{
   icon: CodeIcon,
@@ -15,9 +15,9 @@ const services = [{
   color: 'secondary',
   featured: true
 }, {
-  icon: LinkIcon,
-  title: 'API Integration',
-  description: 'Payment gateways, messaging systems, and seamless third-party integrations.',
+  icon: GlobeIcon,
+  title: 'Web Hosting & Domain Registration',
+  description: 'Reliable hosting plans, SSL, DNS management, and domain provisioning handled end-to-end.',
   color: 'secondary',
   featured: false
 }, {
