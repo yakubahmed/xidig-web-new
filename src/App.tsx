@@ -13,11 +13,12 @@ import { Contact } from './components/Contact';
 import { PageHeader } from './components/PageHeader';
 import { ProductDetails } from './components/ProductDetails';
 import { Clients } from './components/Clients';
+import { ComingSoon } from './pages/ComingSoon';
 
-type PrimaryRoute = '/' | '/services' | '/products' | '/about' | '/contact' | '/blog';
+type PrimaryRoute = '/' | '/services' | '/products' | '/about' | '/contact' | '/blog' | '/coming-soon';
 type Route = PrimaryRoute | ProductRoute | BlogPostRoute;
 
-const knownRoutes: Route[] = ['/', '/services', '/products', '/about', '/contact', '/blog', '/products/xidig-pos', '/products/xidig-hms', '/products/university-attendance', '/products/inventory-manager', '/products/loan-management', '/products/greenhouse-calculator', ...blogPosts.map(p => p.route)];
+const knownRoutes: Route[] = ['/', '/services', '/products', '/about', '/contact', '/blog', '/coming-soon', '/products/xidig-pos', '/products/xidig-hms', '/products/university-attendance', '/products/inventory-manager', '/products/loan-management', '/products/greenhouse-calculator', ...blogPosts.map(p => p.route)];
 const isKnownRoute = (path: string): path is Route => knownRoutes.includes(path as Route);
 
 export function App() {
@@ -71,6 +72,11 @@ export function App() {
         return <>
             <Products onNavigate={navigate} />
             <WhyChoose />
+            <Contact />
+          </>;
+      case '/coming-soon':
+        return <>
+            <ComingSoon onNavigate={navigate} />
             <Contact />
           </>;
       case '/blog':
@@ -132,6 +138,11 @@ export function App() {
         title: 'About',
         description: 'Our story, values, and the team building Xidig.',
         breadcrumbs: ['Home', 'About'] as const
+      },
+      '/coming-soon': {
+        title: 'Coming Soon',
+        description: 'A preview of what we are building next.',
+        breadcrumbs: ['Home', 'Coming Soon'] as const
       },
       '/contact': {
         title: 'Contact',
