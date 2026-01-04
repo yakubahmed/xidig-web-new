@@ -59,7 +59,7 @@ export function Blog({
           <div className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm font-medium mb-4">
             Insights
           </div>
-          <h2 className="font-poppins font-bold text-4xl md:text-5xl text-white mb-4 tracking-tight">
+          <h2 className="font-poppins font-bold text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-brand-primary-400 to-brand-primary-200 mb-4 tracking-tight">
             From the Xidig team
           </h2>
           <p className="font-inter text-lg text-gray-400 leading-relaxed">

@@ -46,13 +46,13 @@ const projects = [{
 }];
 export function Projects() {
   const revealRef = useScrollReveal<HTMLElement>();
-  return <section ref={revealRef} className="py-32 px-4 bg-gradient-to-b from-slate-900 to-slate-950 relative">
+  return <section ref={revealRef} className="hidden py-32 px-4 bg-gradient-to-b from-slate-900 to-slate-950 relative">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl mb-20">
           <div className="inline-block px-4 py-1.5 rounded-full bg-brand-secondary-500/10 border border-brand-secondary-500/20 text-brand-secondary-400 text-sm font-medium mb-6">
             Case Studies
           </div>
-          <h2 className="font-poppins font-bold text-5xl md:text-6xl text-white mb-6 tracking-tight">
+          <h2 className="font-poppins font-bold text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-brand-primary-400 to-brand-primary-200 mb-6 tracking-tight">
             Recent work
           </h2>
           <p className="font-inter text-xl text-gray-400 leading-relaxed">

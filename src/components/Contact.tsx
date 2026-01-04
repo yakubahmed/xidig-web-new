@@ -38,7 +38,7 @@ export function Contact() {
           <div className="inline-block px-4 py-1.5 rounded-full bg-brand-primary-500/10 border border-brand-primary-500/20 text-brand-primary-400 text-sm font-medium mb-6">
             Get in Touch
           </div>
-          <h2 className="font-poppins font-bold text-5xl md:text-6xl text-white mb-6 tracking-tight">
+          <h2 className="font-poppins font-bold text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-brand-primary-400 to-brand-primary-200 mb-6 tracking-tight">
             Let's build something great
           </h2>
           <p className="font-inter text-xl text-gray-400 leading-relaxed">

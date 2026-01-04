@@ -50,7 +50,7 @@ export function Services() {
           <div className="inline-block px-4 py-1.5 rounded-full bg-brand-primary-500/10 border border-brand-primary-500/20 text-brand-primary-400 text-sm font-medium mb-6">
             Services
           </div>
-          <h2 className="font-poppins font-bold text-5xl md:text-6xl text-white mb-6 tracking-tight">
+          <h2 className="font-poppins font-bold text-5xl md:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-brand-primary-400 to-brand-primary-200 mb-6 tracking-tight">
             Everything you need to build and scale
           </h2>
           <p className="font-inter text-xl text-gray-400 leading-relaxed">

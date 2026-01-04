@@ -55,7 +55,7 @@ export function ProductDetails({
             <div className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-brand-primary-500/10 text-brand-primary-300 border border-brand-primary-500/20 mb-4">
               {product.category}
             </div>
-            <h2 className="font-poppins font-bold text-3xl text-white mb-3">
+            <h2 className="font-poppins font-bold text-3xl text-transparent bg-clip-text bg-gradient-to-r from-brand-primary-400 to-brand-primary-200 mb-3">
               {product.title}
             </h2>
             <p className="font-inter text-gray-300 leading-relaxed mb-6">

@@ -154,7 +154,7 @@ export function About() {
               About Xidig Tech
             </div>
             <div className="space-y-4">
-              <h2 className="font-poppins font-bold text-4xl md:text-5xl text-white leading-tight">
+              <h2 className="font-poppins font-bold text-4xl md:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-brand-primary-400 to-brand-primary-200 leading-tight">
                 A remote-first team engineering reliable, modern systems.
               </h2>
               <p className="font-inter text-lg text-gray-200 leading-relaxed max-w-2xl">
